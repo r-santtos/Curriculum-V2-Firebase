@@ -20,7 +20,7 @@ export default function Routes() {
   /** VERIFICATION */
   async function isLoadingTokenUser() {
     try {
-      let result = await SecureStore.getItemAsync('profile_email_itz');
+      let result = await SecureStore.getItemAsync('profile_email_cv');
       if (profile.email || result) {
         setLoading(true);
 

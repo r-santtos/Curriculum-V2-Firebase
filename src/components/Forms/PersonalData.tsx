@@ -137,10 +137,10 @@ const PersonalData: React.FC<Props> = ({title, data, doIt}) => {
   /** FUNCTION SERVER SUBMIT */
   async function submit() {
     setLoad(true);
-    if (profiles.profile_email_itz !== undefined) {
+    if (profiles.profile_email_cv !== undefined) {
       firestore()
       .collection('users')
-      .doc(profiles.profile_email_itz)
+      .doc(profiles.profile_email_cv)
       .update({
         nationality: inputNationality,
         marital_status: inputMaritalStatus,

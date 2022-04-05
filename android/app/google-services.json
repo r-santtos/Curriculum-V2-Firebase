@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "297744806343",
+    "project_id": "curriculum-7364a",
+    "storage_bucket": "curriculum-7364a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:297744806343:android:135c09d10b6edf606869e2",
+        "android_client_info": {
+          "package_name": "rsanttos.manager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "297744806343-le96f7vauftmj5busr4aq30s1d7f61v0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "rsanttos.manager",
+            "certificate_hash": "2cc70c19f15eb0c52363fe51336e52063243dbac"
+          }
+        },
+        {
+          "client_id": "297744806343-084pknib3jt98kce4mrcqkqqhvptshes.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDN-d4lvyUrdodIgsJB-37B-sbQSDvc0Xk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "297744806343-084pknib3jt98kce4mrcqkqqhvptshes.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

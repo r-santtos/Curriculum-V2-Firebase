@@ -39,7 +39,7 @@ const Dashboard: React.FC<StackDashboard> = ({navigation}) => {
   /** SAVE DATABASE FIREBASE */
   const saveSubmit = submit();
   const saveDatabaseApi = async () => {
-    let profile_email = await SecureStore.getItemAsync('profile_email_itz');
+    let profile_email = await SecureStore.getItemAsync('profile_email_cv');
     try {
       if (!profile_email) {
         saveSubmit.submit();
@@ -144,7 +144,7 @@ const Dashboard: React.FC<StackDashboard> = ({navigation}) => {
                 numberOfLines={1}
                 style={[styles.txt, {fontSize: 18}]}
               >
-                Olá {profiles ? profiles.profile_given_name_itz : ''}
+                Olá {profiles ? profiles.profile_given_name_cv : ''}
               </Text>
               <Text style={[styles.txt, {color: 'gray'}]}>{salutation}</Text>
             </View>

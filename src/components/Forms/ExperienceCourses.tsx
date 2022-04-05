@@ -80,10 +80,10 @@ const ExperienceCourses: React.FC<Props> = ({title, names, keyArray}) => {
 
   async function submitExperience() {
     setLoad(true);
-    if (profiles.profile_email_itz !== undefined) {
+    if (profiles.profile_email_cv !== undefined) {
       firestore()
       .collection('users')
-      .doc(profiles.profile_email_itz)
+      .doc(profiles.profile_email_cv)
       .update({
         experience: firestore.FieldValue.arrayUnion({
           vacancy: inputCourses,
@@ -110,10 +110,10 @@ const ExperienceCourses: React.FC<Props> = ({title, names, keyArray}) => {
 
   async function submitCourses() {
     setLoad(true);
-    if (profiles.profile_email_itz !== undefined) {
+    if (profiles.profile_email_cv !== undefined) {
       firestore()
       .collection('users')
-      .doc(profiles.profile_email_itz)
+      .doc(profiles.profile_email_cv)
       .update({
         courses: firestore.FieldValue.arrayUnion({
           courses: inputCourses,
@@ -140,10 +140,10 @@ const ExperienceCourses: React.FC<Props> = ({title, names, keyArray}) => {
 
   async function submitFormation() {
     setLoad(true);
-    if (profiles.profile_email_itz !== undefined) {
+    if (profiles.profile_email_cv !== undefined) {
       firestore()
       .collection('users')
-      .doc(profiles.profile_email_itz)
+      .doc(profiles.profile_email_cv)
       .update({
         formation: firestore.FieldValue.arrayUnion({
           courses: inputCourses,

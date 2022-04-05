@@ -9,13 +9,13 @@ function saveDatabase() {
   /** MODULE SUBMIT AND PROFILE RESPONSE */
   async function profileResponse() {
     try {
-      let profile_email = await SecureStore.getItemAsync('profile_email_itz');
-      let profile_given_name = await SecureStore.getItemAsync('profile_given_name_itz');
-      let picture = await SecureStore.getItemAsync('profile_picture_itz');
+      let profile_email = await SecureStore.getItemAsync('profile_email_cv');
+      let profile_given_name = await SecureStore.getItemAsync('profile_given_name_cv');
+      let picture = await SecureStore.getItemAsync('profile_picture_cv');
 
       let profileStore = {
-        'profile_email_itz' : profile_email ,
-        'profile_given_name_itz' : profile_given_name,
+        'profile_email_cv' : profile_email ,
+        'profile_given_name_cv' : profile_given_name,
         'picture_itz': picture
       }
 
@@ -41,9 +41,9 @@ function saveDatabase() {
           created_at: firestore.FieldValue.serverTimestamp(),
         })
         .then(() => {
-          save('profile_email_itz', profile.email);
-          save('profile_given_name_itz', profile.given_name);
-          save('profile_picture_itz', profile.picture);
+          save('profile_email_cv', profile.email);
+          save('profile_given_name_cv', profile.given_name);
+          save('profile_picture_cv', profile.picture);
           console.log('update');
         })
         .catch(() => {
@@ -61,9 +61,9 @@ function saveDatabase() {
             created_at: firestore.FieldValue.serverTimestamp(),
           })
           .then(() => {
-            save('profile_email_itz', profile.email);
-            save('profile_given_name_itz', profile.given_name);
-            save('profile_picture_itz', profile.picture);
+            save('profile_email_cv', profile.email);
+            save('profile_given_name_cv', profile.given_name);
+            save('profile_picture_cv', profile.picture);
             console.log('update');
           })
           .catch(() => {

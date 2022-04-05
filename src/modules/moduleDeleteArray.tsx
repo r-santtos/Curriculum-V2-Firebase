@@ -9,10 +9,10 @@ const moduleDeleteArray = () => {
   const objCourses = user.courses;
 
   const delCancelExperience = (key: number) => {
-    if (profiles.profile_email_itz !== undefined) {
+    if (profiles.profile_email_cv !== undefined) {
       firestore()
       .collection('users')
-      .doc(profiles.profile_email_itz)
+      .doc(profiles.profile_email_cv)
       .update({
         experience: firestore.FieldValue.arrayRemove(objExperience[key]),
       })
@@ -26,10 +26,10 @@ const moduleDeleteArray = () => {
   }
 
   const delCancelFormation = (key: number) => {
-    if (profiles.profile_email_itz !== undefined) {
+    if (profiles.profile_email_cv !== undefined) {
       firestore()
       .collection('users')
-      .doc(profiles.profile_email_itz)
+      .doc(profiles.profile_email_cv)
       .update({
         formation: firestore.FieldValue.arrayRemove(objFormation[key]),
       })
@@ -43,10 +43,10 @@ const moduleDeleteArray = () => {
   }
 
   const delCancelCourses = (key: number) => {
-    if (profiles.profile_email_itz !== undefined) {
+    if (profiles.profile_email_cv !== undefined) {
       firestore()
       .collection('users')
-      .doc(profiles.profile_email_itz)
+      .doc(profiles.profile_email_cv)
       .update({
         courses: firestore.FieldValue.arrayRemove(objCourses[key]),
       })

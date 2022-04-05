@@ -20,9 +20,9 @@ const ModalComponent: React.FC = () => {
   const [profile, setProfile] = useState({}) as any;
   async function apiDashboard() {
     try {
-      let profile_given_name = await SecureStore.getItemAsync('profile_given_name_itz');
+      let profile_given_name = await SecureStore.getItemAsync('profile_given_name_cv');
 
-      let profileStore = {'profile_given_name_itz' : profile_given_name}
+      let profileStore = {'profile_given_name_cv' : profile_given_name}
 
       setProfile(profileStore);
 
@@ -46,7 +46,7 @@ const ModalComponent: React.FC = () => {
             {/** ---------------------------- */}
             <View style={styles.card}>
               <Text style={[styles.txt, {fontSize: 18, paddingVertical: 16}]}>
-                Olá, {profile ? profile.profile_given_name_itz : ''}!
+                Olá, {profile ? profile.profile_given_name_cv : ''}!
               </Text>
 
               <Text style={[styles.txt, {color: 'gray'}]}>

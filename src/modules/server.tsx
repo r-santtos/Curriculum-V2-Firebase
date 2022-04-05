@@ -6,7 +6,7 @@ const firebaseServer = () => {
   const { setUser } = userListUser();
 
   async function userProfileFirebase() {
-    let result = await SecureStore.getItemAsync('profile_email_itz');
+    let result = await SecureStore.getItemAsync('profile_email_cv');
     if (result) {
 
       const unsubscribe = firestore()
