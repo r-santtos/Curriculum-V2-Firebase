@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <resources>
-  <color name="splashscreen_background">#FFFFFF</color>
+  <color name="splashscreen_background">#1b1b1e</color>
+  <color name="status_bar_splashscreen">#1b1b1e</color>
+  <color name="icon_color">#1b1b1e</color>
 </resources>

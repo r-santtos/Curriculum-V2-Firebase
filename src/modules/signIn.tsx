@@ -20,8 +20,8 @@ function signIn() {
   async function handleSignInGoogle() {
     try {
       setLoading(true);
-      let CLIENT_ID = '377096694432-ks7hhq7orpugm4ovb1f8ht0gbctlquoj.apps.googleusercontent.com'; 
-      let REDIRECT_URI = 'https://auth.expo.io/@rsanttos/empregos'; 
+      let CLIENT_ID = '652639837101-5iilrru3d849otp1uiskjd8vio38num7.apps.googleusercontent.com'; 
+      let REDIRECT_URI = 'https://auth.expo.io/@rsanttos/curriculum'; 
       let RESPONSE_TYPE = 'token';
       let SCOPE = encodeURI('profile email');
   
