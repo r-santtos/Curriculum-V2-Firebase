@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 import * as SecureStore from 'expo-secure-store';
-import firestore from '@react-native-firebase/firestore';
 
-import { userLoading, userListDashboard, userProfile } from '../context';
+import { userLoading, userProfile } from '../context';
 
 import StackRoutes  from './StackRoutes';
 import SignIn from '../screens/SignIn';
@@ -13,7 +12,6 @@ import { userCount } from '../context/index';
 export default function Routes() {
   const { count } = userCount();
   const { profile } = userProfile();
-  const { setListDashboard } = userListDashboard();
   const { setLoading, isLoadingToken, setIsLoadingToken  } = userLoading();
   const { Navigator, Screen } = createNativeStackNavigator();
 
@@ -23,19 +21,8 @@ export default function Routes() {
       let result = await SecureStore.getItemAsync('profile_email_cv');
       if (profile.email || result) {
         setLoading(true);
-
         try {
-          const unsubscribe = firestore().collection("jobs")
-            .orderBy("reg_date", "desc")
-            // .where("status_vacancy", "==", "1")
-            .onSnapshot(query => {
-              const data = query.docs.map(doc => {
-                return { id: doc.id, ...doc.data() };
-              }) as any;
-              setListDashboard(data);
-              setIsLoadingToken(true);
-            });
-          return () => unsubscribe();
+          setIsLoadingToken(true);
         } catch (error) {
           console.log(error);
         }

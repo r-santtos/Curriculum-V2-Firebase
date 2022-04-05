@@ -50,26 +50,26 @@ const SignIn: React.FC<StackSignIn> = ({navigation}) => {
 
         <View style={{flex: 1, width: '100%', justifyContent: 'center'}}>
           <Text style={styles.titleH1}>
-            Vagas de{"\n"}
-            <Text style={{color: '#5afa9a'}}>Empregos</Text>{"\n"}
-            Imperatriz{"\n"}
-            Maranhão
+            Aplicativo{"\n"}
+            <Text style={{color: '#d55e38'}}>Curriculum</Text>{"\n"}
+            CV Profissional{"\n"}
+            Em PDF
           </Text>
 
           <Text style={styles.titleH2}>
-            Encontre o emprego perfeito para você e com apenas um clique envie seu currículo
+            Construa seu currículo profissional e com apenas um clique você pode compartilhar ou imprimir em PDF
           </Text>
         </View>
 
         <View style={{width: '100%',height: '25%', justifyContent: 'center'}}>
           {loading == true ? (
-            <ActivityIndicator size="large" color="#5afa9a"/>
+            <ActivityIndicator size="large" color="#d55e38"/>
           ) : (
             <TouchableOpacity 
               style={[styles.btn, {flexDirection: 'row'}]} 
               onPress={() => socialLogin.handleSignInGoogle()}
             >
-              <Text style={{color: '#0d0d10', fontWeight: 'bold', fontSize: 20}}>Google</Text>
+              <Text style={{color: '#fff', fontWeight: 'bold', fontSize: 20}}>Google</Text>
             </TouchableOpacity>
           )}
         </View>
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
-    backgroundColor: '#0d0d10',
+    backgroundColor: '#1b1b1e',
     paddingHorizontal: 8,
   },
   boxLogo: {
@@ -113,16 +113,17 @@ const styles = StyleSheet.create({
   btn: {
     width: '100%',
     height: 55,
-    backgroundColor: '#5afa9a',
+    backgroundColor: '#d55e38',
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 75/2,
     zIndex: 2
   },
   /** BALLS */
+  /** BALLS */
   ball: {
     position: 'absolute',
-    backgroundColor: '#5afa9a',
+    backgroundColor: '#d55e38',
     zIndex: 1,
     borderRadius: 200,
   },
@@ -139,7 +140,7 @@ const styles = StyleSheet.create({
     top: -50,
     right: -30,
     opacity: 0.2,
-    backgroundColor: '#5afa9a',
+    backgroundColor: '#d55e38',
 
   },
   ballTwo: {
