@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { 
   View, 
   Text, 
@@ -244,16 +244,27 @@ const Profile: React.FC<StackProfile> = ({ navigation }) => {
     'phone': user.phone,
   };
 
+  /** FUNCTION SALUTATION */
+  const hours = new Date();
+  const salutations = hours.getHours();
+  const [salutation, setSalutation] = useState('');
+  useEffect(() => {    
+    if (salutations >= 0 && salutations <= 11) {
+      setSalutation("Bom Dia...");
+    } else if (salutations >= 12 && salutations <= 18) {
+      setSalutation("Boa Tarde...");
+    } else if (salutations >= 19 && salutations <= 23) {
+      setSalutation("Boa Noite...");
+    } else {
+      setSalutation("Hello");
+    }
+  },[salutation]);
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
         <View style={styles.boxProfile}>
-          <TouchableOpacity 
-            style={styles.btnNotification}
-            onPress={() => dashboard()}
-          >
-            <Ionicons name="arrow-back" size={16} color="#fff" />
-          </TouchableOpacity>
+          <Text style={[styles.txt, {color: 'gray'}]}>{salutation}</Text>
         </View>
 
         <View style={{flexDirection: 'row', alignItems: 'center'}}>
