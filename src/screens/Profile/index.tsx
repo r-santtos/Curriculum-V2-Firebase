@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
   Alert, 
 } from 'react-native';
-import { FontAwesome, Entypo, Feather, Ionicons } from '@expo/vector-icons';
+import { FontAwesome, Entypo, Feather } from '@expo/vector-icons';
 import { shareAsync } from 'expo-sharing';
 import * as Print from 'expo-print';
 
