@@ -99,25 +99,25 @@ const Profile: React.FC<StackProfile> = ({ navigation }) => {
           ${user.experience[0] == undefined ? '' : `
             <div style="margin-bottom: 8px;">
               <h2>* ${user.experience[0].vacancy}</h2>
-              <p>* ${user.experience[0].institution} - (${user.experience[0].periodFinish} a ${user.experience[0].periodFinish})</p>
+              <p>* ${user.experience[0].institution} - (${user.experience[0].periodStart} a ${user.experience[0].periodFinish})</p>
             </div>
           `}
           ${user.experience[1] == undefined ? '' : `
             <div style="margin-bottom: 8px;">
               <h2>* ${user.experience[1].vacancy}</h2>
-              <p>* ${user.experience[1].institution} - (${user.experience[1].periodFinish} a ${user.experience[1].periodFinish})</p>
+              <p>* ${user.experience[1].institution} - (${user.experience[1].periodStart} a ${user.experience[1].periodFinish})</p>
             </div>
           `}
           ${user.experience[2] == undefined ? '' : `
             <div style="margin-bottom: 8px;">
               <h2>* ${user.experience[2].vacancy}</h2>
-              <p>* ${user.experience[2].institution} - (${user.experience[2].periodFinish} a ${user.experience[2].periodFinish})</p>
+              <p>* ${user.experience[2].institution} - (${user.experience[2].periodStart} a ${user.experience[2].periodFinish})</p>
             </div>
           `}
           ${user.experience[3] == undefined ? '' : `
             <div style="margin-bottom: 8px;">
               <h2>* ${user.experience[3].vacancy}</h2>
-              <p>* ${user.experience[3].institution} - (${user.experience[3].periodFinish} a ${user.experience[3].periodFinish})</p>
+              <p>* ${user.experience[3].institution} - (${user.experience[3].periodStart} a ${user.experience[3].periodFinish})</p>
             </div>
           `}
         </section>
@@ -127,19 +127,19 @@ const Profile: React.FC<StackProfile> = ({ navigation }) => {
           ${user.formation[0] == undefined ? '' : `
             <div style="margin-bottom: 8px;">
               <h2>* ${user.formation[0].courses}</h2>
-              <p>* ${user.formation[0].institution} - (${user.formation[0].periodFinish} a ${user.formation[0].periodFinish})</p>
+              <p>* ${user.formation[0].institution} - (${user.formation[0].periodStart} a ${user.formation[0].periodFinish})</p>
             </div>
           `}
           ${user.formation[1] == undefined ? '' : `
             <div style="margin-bottom: 8px;">
               <h2>* ${user.formation[1].courses}</h2>
-              <p>* ${user.formation[1].institution} - (${user.formation[1].periodFinish} a ${user.formation[1].periodFinish})</p>
+              <p>* ${user.formation[1].institution} - (${user.formation[1].periodStart} a ${user.formation[1].periodFinish})</p>
             </div>
           `}
           ${user.formation[2] == undefined ? '' : `
             <div style="margin-bottom: 8px;">
               <h2>* ${user.formation[2].courses}</h2>
-              <p>* ${user.formation[2].institution} - (${user.formation[2].periodFinish} a ${user.formation[2].periodFinish})</p>
+              <p>* ${user.formation[2].institution} - (${user.formation[2].periodStart} a ${user.formation[2].periodFinish})</p>
             </div>
           `}
         </section>
@@ -149,19 +149,19 @@ const Profile: React.FC<StackProfile> = ({ navigation }) => {
           ${user.courses[0] == undefined ? '' : `
             <div style="margin-bottom: 8px;">
               <h2>* ${user.courses[0].courses}</h2>
-              <p>* ${user.courses[0].institution} - (${user.courses[0].periodFinish} a ${user.courses[0].periodFinish})</p>
+              <p>* ${user.courses[0].institution} - (${user.courses[0].periodStart} a ${user.courses[0].periodFinish})</p>
             </div>
           `}
           ${user.courses[1] == undefined ? '' : `
             <div style="margin-bottom: 8px;">
               <h2>* ${user.courses[1].courses}</h2>
-              <p>* ${user.courses[1].institution} - (${user.courses[1].periodFinish} a ${user.courses[1].periodFinish})</p>
+              <p>* ${user.courses[1].institution} - (${user.courses[1].periodStart} a ${user.courses[1].periodFinish})</p>
             </div>
           `}
           ${user.courses[2] == undefined ? '' : `
             <div style="margin-bottom: 8px;">
               <h2>* ${user.courses[2].courses}</h2>
-              <p>* ${user.courses[2].institution} - (${user.courses[2].periodFinish} a ${user.courses[2].periodFinish})</p>
+              <p>* ${user.courses[2].institution} - (${user.courses[2].periodStart} a ${user.courses[2].periodFinish})</p>
             </div>
           `}
         </section>
