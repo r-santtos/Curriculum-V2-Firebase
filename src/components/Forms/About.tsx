@@ -106,7 +106,7 @@ const About: React.FC<Props> = ({title, doIt, description}) => {
         </TouchableOpacity>
       : 
         <TouchableOpacity style={styles.btn}>
-          <ActivityIndicator size="small" color="#5afa9a"/>
+          <ActivityIndicator size="small" color="#d55e38"/>
         </TouchableOpacity>
       }
 

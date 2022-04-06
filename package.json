@@ -9,16 +9,12 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "@react-native-firebase/analytics": "^14.7.0",
     "@react-native-firebase/app": "^14.7.0",
     "@react-native-firebase/firestore": "^14.7.0",
-    "@react-native-firebase/messaging": "^14.7.0",
     "@react-navigation/native": "^6.0.8",
     "@react-navigation/native-stack": "^6.5.2",
     "expo": "~44.0.2",
     "expo-auth-session": "~3.5.0",
-    "expo-linear-gradient": "~11.0.3",
-    "expo-mail-composer": "~11.1.0",
     "expo-print": "~11.1.0",
     "expo-random": "~12.1.1",
     "expo-secure-store": "~11.1.0",

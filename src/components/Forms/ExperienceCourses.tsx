@@ -276,7 +276,7 @@ const ExperienceCourses: React.FC<Props> = ({title, names, keyArray}) => {
         </TouchableOpacity>
       : 
         <TouchableOpacity style={styles.btn}>
-          <ActivityIndicator size="small" color="#5afa9a"/>
+          <ActivityIndicator size="small" color="#d55e38"/>
         </TouchableOpacity>
       }
     </View>
