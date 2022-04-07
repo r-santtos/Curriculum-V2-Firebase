@@ -894,28 +894,6 @@ const Profile: React.FC<StackProfile> = ({ navigation }) => {
             <></>
           }
 
-          {user.courses[4] ? 
-            <View style={[styles.boxInfo, styles.boxRow]}>
-              <View>
-                <Text style={styles.txt}>
-                  {user.courses ? user.courses[4].courses: '...'}
-                </Text>
-                <Text style={styles.label}>
-                  {user.courses ? user.courses[4].institution : '...'}
-                </Text>
-                <Text style={styles.label}>
-                  {user.courses ? user.courses[4].periodStart : '...'} a {user.courses ? user.courses[4].periodFinish : '...'}
-                </Text>
-              </View>
-
-              <TouchableOpacity style={styles.btnPlus} onPress={() => createTwoButtonAlert(4, 'courses')}>
-                <FontAwesome name="times" size={16} color="#fff" />
-              </TouchableOpacity>
-            </View>
-          : 
-            <></>
-          }
-
           {user.courses[5] ? 
             <View style={[styles.boxInfo, styles.boxRow]}>
               <View>
