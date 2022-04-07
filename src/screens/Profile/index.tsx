@@ -30,142 +30,285 @@ const Profile: React.FC<StackProfile> = ({ navigation }) => {
 
   /** HTML PRINT */
   const html = `
-    <html>
-      <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
-        <style>
-          * {
-            width: 100%;
-            margin: 0px;
-            padding: 0px;
-            border: 0px;
-            object-fit: cover;
-            box-sizing: border-box;
-            text-decoration: none;
-            list-style: none;
-            outline: none;
-            font-size: 100%;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+      <meta name="description" content="..." />
+      <link rel="stylesheet" href="./styles.css" />
+      <title>Curriculum</title>
+      <style>
+        * {
+          width: 100%;
+          margin: 0px;
+          padding: 0px;
+          border: 0px;
+          object-fit: cover;
+          box-sizing: border-box;
+          text-decoration: none;
+          list-style: none;
+          outline: none;
+          font-size: 100%;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        hr {
+          width: 30%;
+          border: 0;
+          border-top: 2px solid #ccc;
+          margin: 0 0 16px 0;
+          padding: 0;
+        }
+        #main {
+          height: 100vh;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          margin: 0 auto;
+        }
+        #aside {
+          width: 35%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: flex-start;
+          background-color: rgb(26, 64, 73);
+          padding: 32px 16px;
+          color: #fff;
+        }
+        #aside .aside-box {
+          width: 100%;
+          margin-bottom: 32px;
+        }
+        #aside .aside-box .img {
+          width: 100px; 
+          height: 125px;
+          border-radius: 8px;
+        }
+        #aside .position-img {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        #aside .aside-box h2 {
+          font-size: 1.1em;
+          font-weight: 600;
+          margin-bottom: 16px;
+        }
+        #aside .aside-box h3 {
+          font-size: 1em;
+          font-weight: normal;
+        }
+        #aside .aside-box p {
+          font-size: 0.9em;
+          color: #b4b4b4;
+        }
+        #aside .aside-box .box-info {
+          margin-bottom: 16px;
+        }
+
+        #body {
+          width: 65%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: flex-start;
+          padding: 32px 16px;
+        }
+        #body .pesonal-data .box-info {
+          margin-bottom: 32px;
+        }
+        #body .pesonal-data .box-info h2 {
+          font-size: 2.5em;
+          font-weight: 600;
+        }
+        #body .pesonal-data .box-info h3 {
+          font-size: 1.5em;
+          margin-bottom: 16px;
+        }
+        #body .pesonal-data .box-info p {
+          font-size: 18px;
+        }
+        #body .experiences h2 {
+          font-size: 1.5em;
+          margin-bottom: 16px;
+        }
+        #body .experiences .box-info {
+          margin-bottom: 32px;
+        }
+        #body .formation h2 {
+          font-size: 1.5em;
+          margin-bottom: 16px;
+        }
+        #body .formation .box-info {
+          margin-bottom: 32px;
+        }
+
+        @media print {
+          #aside {
+            background-color: rgb(26, 64, 73)!important;
+            -webkit-print-color-adjust: exact; 
           }
-          body {padding: 16px 0px;}
-          html, body {color: gray; font-weight: 400; font-size: 14px;}
-          h1 {color: #24282d; font-size: 16px;}
-          img {
-            width: 100px; 
-            height: 125px; 
-            margin-right: 16px;
-          }
-          hr {
-            height: 10px;
-            background-color: rgb(218, 218, 218);
-            border-radius: 4px;
-            margin: 8px 0px;
-          }
-          .card {
-            padding: 0px 16px;
-            margin-bottom: 24px;
-          }
-          .card-profile {
-            display: flex;
-            flex-direction: row;
-            align-items: flex-start;
-            justify-content: space-between;
-          }
-          .card-profile h2 {margin-bottom: 4px;}
-        </style>
-      </head>
-      <body>
-        <section class="card card-profile">
-          <img src="${user.photo == undefined ? '...' : user.photo}" />
-          <div>
-            <h1 style="margin-bottom: 8px; font-size: 16px;">
-              ${user.fullName == undefined ? '...' : user.fullName}}
-            </h1>
-            <h2 style="text-transform: capitalize;">${user.nationality == undefined ? '...' : user.nationality}, ${user.marital_status == undefined ? '...' : user.marital_status}, ${user.age == undefined ? '...' : user.age} anos</h2>
-            <h2 style="text-transform: capitalize;">Endereço - ${user.street == undefined ? '...' : user.street} N°${user.street_number == undefined ? '...' : user.street_number}</h2>
-            <h2 style="text-transform: capitalize;">Bairro - ${user.neighborhood == undefined ? '...' : user.neighborhood}, ${user.city == undefined ? '...' : user.city} - ${user.state == undefined ? '...' : user.state}</h2>
-            <h2>Telefone: (${user.ddd == undefined ? '...' : user.ddd}) ${user.phone == undefined ? '...' : user.phone}</h2>
-            <h2>E-mail: ${user.email == undefined ? '...' : user.email}</h2>
+        }
+      </style>
+    </head>
+    <body>
+      <main id="main">
+        <aside id="aside">
+          <div class="aside-box position-img">
+            <img src="${user.photo == undefined ? '...' : user.photo}" alt="profile" class="img" />
+          </div>
+
+          <div class="aside-box">
+            <h2>Contato</h2>
+            <p>Tel.: (${user.ddd == undefined ? '...' : user.ddd}) ${user.phone == undefined ? '...' : user.phone}</p>
+            <p>${user.email == undefined ? '...' : user.email}</p>
+            <br />
+            <p>${user.street == undefined ? '...' : user.street}, N° ${user.street_number == undefined ? '...' : user.street_number}</p>
+            <p>Jardim Morada Do Sol</p>
+            <p>${user.city == undefined ? '...' : user.city}-${user.state == undefined ? '...' : user.state}</p>
+          </div>
+
+          <div class="aside-box">
+            <h2>Certifications</h2>
+            ${user.courses[0] == undefined ? '' : `
+              <div class="box-info">
+                <h3>${user.courses[0].courses}</h3>
+                <p>${user.courses[0].institution}</p>
+                <p>Ano: ${user.courses[0].periodStart} a ${user.courses[0].periodFinish}</p>
+              </div>
+            `}
+
+            ${user.courses[1] == undefined ? '' : `
+              <div class="box-info">
+                <h3>${user.courses[1].courses}</h3>
+                <p>${user.courses[1].institution}</p>
+                <p>Ano: ${user.courses[1].periodStart} a ${user.courses[1].periodFinish}</p>
+              </div>
+            `}
+
+            ${user.courses[2] == undefined ? '' : `
+              <div class="box-info">
+                <h3>${user.courses[2].courses}</h3>
+                <p>${user.courses[2].institution}</p>
+                <p>Ano: ${user.courses[2].periodStart} a ${user.courses[2].periodFinish}</p>
+              </div>
+            `}
+
+            ${user.courses[3] == undefined ? '' : `
+              <div class="box-info">
+                <h3>${user.courses[3].courses}</h3>
+                <p>${user.courses[3].institution}</p>
+                <p>Ano: ${user.courses[3].periodStart} a ${user.courses[3].periodFinish}</p>
+              </div>
+            `}
+
+            ${user.courses[4] == undefined ? '' : `
+              <div class="box-info">
+                <h3>${user.courses[4].courses}</h3>
+                <p>${user.courses[4].institution}</p>
+                <p>Ano: ${user.courses[4].periodStart} a ${user.courses[4].periodFinish}</p>
+              </div>
+            `}
+
+            ${user.courses[5] == undefined ? '' : `
+              <div class="box-info">
+                <h3>${user.courses[5].courses}</h3>
+                <p>${user.courses[5].institution}</p>
+                <p>Ano: ${user.courses[5].periodStart} a ${user.courses[5].periodFinish}</p>
+              </div>
+            `}
+
+            ${user.courses[6] == undefined ? '' : `
+              <div class="box-info">
+                <h3>${user.courses[6].courses}</h3>
+                <p>${user.courses[6].institution}</p>
+                <p>Ano: ${user.courses[6].periodStart} a ${user.courses[6].periodFinish}</p>
+              </div>
+            `}
+          </div>
+        </div>
+        </aside>
+
+        <section id="body">
+          <div class="pesonal-data">
+            <div class="box-info">
+              <h2>${user.fullName == undefined ? '...' : user.fullName}</h2>
+              <p>${user.nationality == undefined ? '...' : user.nationality}, ${user.marital_status == undefined ? '...' : user.marital_status}, ${user.age == undefined ? '...' : user.age} Anos</p>
+              <p style="color: gray;">${user.city == undefined ? '...' : user.city}</p>
+            </div>
+
+            <div class="box-info about">
+              <h3>Resumo</h3>
+              <p>${user.about == undefined ? '...' : user.about}</p>
+            </div>
+          </div>
+
+          <hr />
+          <div class="experiences">
+            <h2>Experiência</h2>
+            ${user.experience[0] == undefined ? '' : `
+              <div class="box-info">
+                <h3>${user.experience[0].vacancy}</h3>
+                <p>${user.experience[0].institution}</p>
+                <p style="color: gray;">Ano: ${user.experience[0].periodStart} a ${user.experience[0].periodFinish}</p>
+              </div>
+            `}
+            ${user.experience[1] == undefined ? '' : `
+              <div class="box-info">
+                <h3>${user.experience[1].vacancy}</h3>
+                <p>${user.experience[1].institution}</p>
+                <p style="color: gray;">Ano: ${user.experience[1].periodStart} a ${user.experience[1].periodFinish}</p>
+              </div>
+            `}
+            ${user.experience[2] == undefined ? '' : `
+              <div class="box-info">
+                <h3>${user.experience[2].vacancy}</h3>
+                <p>${user.experience[2].institution}</p>
+                <p style="color: gray;">Ano: ${user.experience[2].periodStart} a ${user.experience[2].periodFinish}</p>
+              </div>
+            `}
+            ${user.experience[3] == undefined ? '' : `
+              <div class="box-info">
+                <h3>${user.experience[3].vacancy}</h3>
+                <p>${user.experience[3].institution}</p>
+                <p style="color: gray;">Ano: ${user.experience[3].periodStart} a ${user.experience[3].periodFinish}</p>
+              </div>
+            `}
+          </div>
+
+          <hr />
+          <div class="formation">
+            <h2>Formação</h2>
+            ${user.formation[0] == undefined ? '' : `
+              <div class="box-info">
+                <h3>${user.formation[0].courses}</h3>
+                <p>${user.formation[0].institution}</p>
+                <p>Ano: ${user.formation[0].periodStart} a ${user.formation[0].periodFinish}</p>
+              </div>
+            `}
+            ${user.formation[1] == undefined ? '' : `
+              <div class="box-info">
+                <h3>${user.formation[1].courses}</h3>
+                <p>${user.formation[1].institution}</p>
+                <p>Ano: ${user.formation[1].periodStart} a ${user.formation[1].periodFinish}</p>
+              </div>
+            `}
+            ${user.formation[2] == undefined ? '' : `
+              <div class="box-info">
+                <h3>${user.formation[2].courses}</h3>
+                <p>${user.formation[2].institution}</p>
+                <p>Ano: ${user.formation[2].periodStart} a ${user.formation[2].periodFinish}</p>
+              </div>
+            `}
           </div>
         </section>
-        <section class="card">
-          <h1>Sobre</h1>
-          <hr />
-          <p>${user.about == undefined ? '...' : user.about}</p>
-        </section>
-        <section class="card">
-          <h1>Experiências profissionais</h1>
-          <hr />
-          ${user.experience[0] == undefined ? '' : `
-            <div style="margin-bottom: 8px;">
-              <h2>* ${user.experience[0].vacancy}</h2>
-              <p>* ${user.experience[0].institution} - (${user.experience[0].periodStart} a ${user.experience[0].periodFinish})</p>
-            </div>
-          `}
-          ${user.experience[1] == undefined ? '' : `
-            <div style="margin-bottom: 8px;">
-              <h2>* ${user.experience[1].vacancy}</h2>
-              <p>* ${user.experience[1].institution} - (${user.experience[1].periodStart} a ${user.experience[1].periodFinish})</p>
-            </div>
-          `}
-          ${user.experience[2] == undefined ? '' : `
-            <div style="margin-bottom: 8px;">
-              <h2>* ${user.experience[2].vacancy}</h2>
-              <p>* ${user.experience[2].institution} - (${user.experience[2].periodStart} a ${user.experience[2].periodFinish})</p>
-            </div>
-          `}
-          ${user.experience[3] == undefined ? '' : `
-            <div style="margin-bottom: 8px;">
-              <h2>* ${user.experience[3].vacancy}</h2>
-              <p>* ${user.experience[3].institution} - (${user.experience[3].periodStart} a ${user.experience[3].periodFinish})</p>
-            </div>
-          `}
-        </section>
-        <section class="card">
-          <h1>Formação</h1>
-          <hr />
-          ${user.formation[0] == undefined ? '' : `
-            <div style="margin-bottom: 8px;">
-              <h2>* ${user.formation[0].courses}</h2>
-              <p>* ${user.formation[0].institution} - (${user.formation[0].periodStart} a ${user.formation[0].periodFinish})</p>
-            </div>
-          `}
-          ${user.formation[1] == undefined ? '' : `
-            <div style="margin-bottom: 8px;">
-              <h2>* ${user.formation[1].courses}</h2>
-              <p>* ${user.formation[1].institution} - (${user.formation[1].periodStart} a ${user.formation[1].periodFinish})</p>
-            </div>
-          `}
-          ${user.formation[2] == undefined ? '' : `
-            <div style="margin-bottom: 8px;">
-              <h2>* ${user.formation[2].courses}</h2>
-              <p>* ${user.formation[2].institution} - (${user.formation[2].periodStart} a ${user.formation[2].periodFinish})</p>
-            </div>
-          `}
-        </section>
-        <section class="card">
-          <h1>Cursos</h1>
-          <hr />
-          ${user.courses[0] == undefined ? '' : `
-            <div style="margin-bottom: 8px;">
-              <h2>* ${user.courses[0].courses}</h2>
-              <p>* ${user.courses[0].institution} - (${user.courses[0].periodStart} a ${user.courses[0].periodFinish})</p>
-            </div>
-          `}
-          ${user.courses[1] == undefined ? '' : `
-            <div style="margin-bottom: 8px;">
-              <h2>* ${user.courses[1].courses}</h2>
-              <p>* ${user.courses[1].institution} - (${user.courses[1].periodStart} a ${user.courses[1].periodFinish})</p>
-            </div>
-          `}
-          ${user.courses[2] == undefined ? '' : `
-            <div style="margin-bottom: 8px;">
-              <h2>* ${user.courses[2].courses}</h2>
-              <p>* ${user.courses[2].institution} - (${user.courses[2].periodStart} a ${user.courses[2].periodFinish})</p>
-            </div>
-          `}
-        </section>
-      </body>
+      </main>
+    </body>
     </html>
   `;
   
@@ -628,7 +771,7 @@ const Profile: React.FC<StackProfile> = ({ navigation }) => {
           <View style={styles.row}>
             <Text style={[styles.txt, {fontSize: 18}]}>Cursos</Text>
             {objCourses == undefined ?  <></> : 
-              objCourses.length == 4 ? 
+              objCourses.length == 7 ? 
                 <></>
               : 
                 <TouchableOpacity 
@@ -722,6 +865,94 @@ const Profile: React.FC<StackProfile> = ({ navigation }) => {
               </View>
 
               <TouchableOpacity style={styles.btnPlus} onPress={() => createTwoButtonAlert(3, 'courses')}>
+                <FontAwesome name="times" size={16} color="#fff" />
+              </TouchableOpacity>
+            </View>
+          : 
+            <></>
+          }
+
+          {user.courses[4] ? 
+            <View style={[styles.boxInfo, styles.boxRow]}>
+              <View>
+                <Text style={styles.txt}>
+                  {user.courses ? user.courses[4].courses: '...'}
+                </Text>
+                <Text style={styles.label}>
+                  {user.courses ? user.courses[4].institution : '...'}
+                </Text>
+                <Text style={styles.label}>
+                  {user.courses ? user.courses[4].periodStart : '...'} a {user.courses ? user.courses[4].periodFinish : '...'}
+                </Text>
+              </View>
+
+              <TouchableOpacity style={styles.btnPlus} onPress={() => createTwoButtonAlert(4, 'courses')}>
+                <FontAwesome name="times" size={16} color="#fff" />
+              </TouchableOpacity>
+            </View>
+          : 
+            <></>
+          }
+
+          {user.courses[4] ? 
+            <View style={[styles.boxInfo, styles.boxRow]}>
+              <View>
+                <Text style={styles.txt}>
+                  {user.courses ? user.courses[4].courses: '...'}
+                </Text>
+                <Text style={styles.label}>
+                  {user.courses ? user.courses[4].institution : '...'}
+                </Text>
+                <Text style={styles.label}>
+                  {user.courses ? user.courses[4].periodStart : '...'} a {user.courses ? user.courses[4].periodFinish : '...'}
+                </Text>
+              </View>
+
+              <TouchableOpacity style={styles.btnPlus} onPress={() => createTwoButtonAlert(4, 'courses')}>
+                <FontAwesome name="times" size={16} color="#fff" />
+              </TouchableOpacity>
+            </View>
+          : 
+            <></>
+          }
+
+          {user.courses[5] ? 
+            <View style={[styles.boxInfo, styles.boxRow]}>
+              <View>
+                <Text style={styles.txt}>
+                  {user.courses ? user.courses[5].courses: '...'}
+                </Text>
+                <Text style={styles.label}>
+                  {user.courses ? user.courses[5].institution : '...'}
+                </Text>
+                <Text style={styles.label}>
+                  {user.courses ? user.courses[5].periodStart : '...'} a {user.courses ? user.courses[5].periodFinish : '...'}
+                </Text>
+              </View>
+
+              <TouchableOpacity style={styles.btnPlus} onPress={() => createTwoButtonAlert(5, 'courses')}>
+                <FontAwesome name="times" size={16} color="#fff" />
+              </TouchableOpacity>
+            </View>
+          : 
+            <></>
+          }
+
+          {user.courses[6] ? 
+            <View style={[styles.boxInfo, styles.boxRow]}>
+              <View>
+                <Text style={styles.txt}>
+                  {user.courses ? user.courses[6].courses: '...'}
+                </Text>
+                <Text style={styles.label}>
+                  {user.courses ? user.courses[6].institution : '...'}
+                </Text>
+                <Text style={styles.label}>
+                  {user.courses ? user.courses[6].periodStart : '...'} a {user.courses ? user.courses[6].periodFinish : '...'}
+                </Text>
+              </View>
+
+              <TouchableOpacity style={styles.btnPlus} onPress={() => createTwoButtonAlert(6, 'courses')}>
                 <FontAwesome name="times" size={16} color="#fff" />
               </TouchableOpacity>
             </View>
